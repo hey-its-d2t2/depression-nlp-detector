@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+*.cover
+
+# Data (keep folder structure, ignore large files)
+data/raw/*.csv
+data/raw/*.json
+data/raw/*.parquet
+data/processed/*.pkl
+data/processed/*.csv
+data/external/
+
+# Models
+models/saved/*.pkl
+models/saved/*.pt
+models/saved/*.bin
+models/saved/*.h5
+!models/saved/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+*.env
+
+# Notebooks
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+mlflow.db
+
+# OS
+Thumbs.db

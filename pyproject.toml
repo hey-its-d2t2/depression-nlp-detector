@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "depression-detector"
+version = "0.1.0"
+description = "Early Detection of Depression from Text Using NLP"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "AI Engineer", email = "engineer@example.com" }]
+keywords = ["nlp", "depression-detection", "mental-health", "bert", "transformers"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Healthcare Industry",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "fastapi>=0.104.0,<0.120",
+    "uvicorn>=0.24.0,<0.35",
+    "pydantic>=2.5.0,<3.0",
+    "pydantic-settings>=2.1.0,<3.0",
+    "scikit-learn>=1.3.2,<2.0",
+    "numpy>=1.24.0,<3.0",
+    "polars>=1.0.0",
+    "nltk>=3.8.1,<3.9",
+    "vaderSentiment>=3.3.2",
+    "loguru>=0.7.2,<1.0",
+    "imbalanced-learn>=0.11.0,<1.0",
+    "joblib>=1.3.2,<2.0",
+    "matplotlib>=3.8.0,<4.0",
+    "seaborn>=0.13.0,<1.0",
+    "httpx>=0.25.0,<1.0",
+]
+
+[project.optional-dependencies]
+deep = [
+    "torch>=2.1.0",
+    "transformers>=4.35.0",
+    "datasets>=2.15.0",
+    "accelerate>=0.25.0",
+]
+dev = [
+    "pytest>=7.4.3",
+    "pytest-cov>=4.1.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.25.0",
+    "black>=23.11.0",
+    "ruff>=0.1.6",
+]
+
+[project.scripts]
+depression-train    = "depression_detector.scripts.train:main"
+depression-predict  = "depression_detector.scripts.predict:main"
+depression-evaluate = "depression_detector.scripts.evaluate:main"
+depression-api      = "depression_detector.api.main:start"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[dependency-groups]
+dev = [
+    "pytest>=7.4.3",
+    "pytest-cov>=4.1.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.25.0",
+    "black>=23.11.0",
+    "ruff>=0.1.6",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-v --tb=short"

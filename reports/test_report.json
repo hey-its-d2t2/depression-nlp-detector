@@ -1,0 +1,50 @@
+{
+  "model_name": "test",
+  "threshold": 0.5,
+  "n_samples": 800,
+  "n_positive": 400,
+  "n_negative": 400,
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "roc_auc": 1.0,
+  "avg_precision": 1.0,
+  "confusion_matrix": [
+    [
+      400,
+      0
+    ],
+    [
+      0,
+      400
+    ]
+  ],
+  "classification_report": {
+    "non-depressed": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "depressed": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 800.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 800.0
+    }
+  }
+}
